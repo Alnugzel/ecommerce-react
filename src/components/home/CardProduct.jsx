@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "./styles/CardProduct.css";
+import { postCartThunk } from "../../store/slice/cart.slice";
+import { useDispatch } from "react-redux";
 
 const CardProduct = ({ product }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleDetail = () => {
     navigate(`/product/${product.id}`);
@@ -10,6 +13,7 @@ const CardProduct = ({ product }) => {
 
   const handleAddCart = (e) => {
     e.stopPropagation();
+    dispatch(postCartThunk(product));
   };
 
   return (
