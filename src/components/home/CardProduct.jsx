@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./styles/CardProduct.css";
+import "../styles/CardProduct.css";
 import { postCartThunk } from "../../store/slice/cart.slice";
 import { useDispatch } from "react-redux";
 
