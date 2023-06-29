@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import ProductInfo from "../components/ProductId/ProductInfo";
 import SimilarProducts from "../components/ProductId/SimilarProducts";
+import SliderImgs from "../components/ProductId/SliderImgs";
 
 const ProductIdPage = () => {
   const { id } = useParams();
@@ -15,7 +16,8 @@ const ProductIdPage = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="productId">
+      <SliderImgs product={product} />
       <ProductInfo product={product} />
       <SimilarProducts product={product} />
     </div>
