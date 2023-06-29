@@ -11,17 +11,28 @@ const Header = () => {
           <div className="navbar__logo">
             <h1 onClick={() => navigate("/")}>e-commerce</h1>
           </div>
-          <ul className="">
-            <li>
-              <Link to="/register"> Register</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/cart">Cart</Link>
-            </li>
-          </ul>
+
+          <button className="navbar__options" onClick={() => navigate("/user")}>
+            <i class="bx bx-user"></i>
+          </button>
+
+          <button
+            className="navbar__options"
+            onClick={() => navigate("/register")}
+          >
+            <i class="bx bx-list-plus"></i>
+          </button>
+
+          <button
+            className="navbar__options"
+            onClick={() => navigate("/purchases")}
+          >
+            <i class="bx bx-purchase-tag"></i>
+          </button>
+
+          <button className="navbar__options" onClick={() => navigate("/cart")}>
+            <i class="bx bx-cart-alt"></i>
+          </button>
         </nav>
       </div>
     </header>

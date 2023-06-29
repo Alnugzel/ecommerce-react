@@ -1,3 +1,7 @@
+.hola {
+  display: flex;
+}
+
 .product {
   width: 100%;
   max-width: 320px;
@@ -93,4 +97,10 @@
 
 .product__btn:hover {
   filter: brightness(1.2);
+}
+
+@media (min-width: 580px) {
+  .product__body {
+    min-height: 215.16px;
+  }
 }

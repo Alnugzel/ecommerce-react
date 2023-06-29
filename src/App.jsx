@@ -10,6 +10,9 @@ import LoginPage from "./pages/LoginPage";
 import Header from "./components/shared/Header";
 import CartPage from "./pages/CartPage";
 import { getCartThunk } from "./store/slice/cart.slice";
+import PurchasesPage from "./pages/PurchasesPage";
+import ProtectedRoutes from "./pages/ProtectedRoutes";
+import UserPage from "./pages/UserPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +30,12 @@ function App() {
         <Route path="/product/:id" element={<ProductIdPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/cart" element={<CartPage />} />
+
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/purchases" element={<PurchasesPage />} />
+          <Route path="/user" element={<UserPage />} />
+        </Route>
       </Routes>
     </div>
   );
