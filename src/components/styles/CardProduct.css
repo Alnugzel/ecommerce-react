@@ -90,7 +90,7 @@
   border-radius: 50%;
   position: relative;
   right: 1em;
-  background-color: var(--color-red);
+  background-color: var(--primary);
   color: white;
   transition: filter 1s;
 }

@@ -7,6 +7,8 @@
 }
 
 .slider__btn {
+  display: flex;
+  justify-content: center;
   width: 1.5em;
   aspect-ratio: 1;
   border-radius: 50%;

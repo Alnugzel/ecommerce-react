@@ -1,4 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import CartElement from "../cart/CartElement";
+
 import "../styles/Header.css";
 
 const Header = () => {
