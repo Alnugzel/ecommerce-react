@@ -31,7 +31,10 @@ const Home = () => {
   return (
     <div className="home">
       <aside>
-        <FilterPrice setPriceMinMax={setPriceMinMax} />
+        <FilterPrice
+          priceMinMax={priceMinMax}
+          setPriceMinMax={setPriceMinMax}
+        />
         <FilterCategory />
       </aside>
       <section className="home__content">

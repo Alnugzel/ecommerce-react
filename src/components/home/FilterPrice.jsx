@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const FilterPrice = ({ setPriceMinMax }) => {
+const FilterPrice = ({ priceMinMax, setPriceMinMax }) => {
   const { register, reset, handleSubmit } = useForm();
 
   const submit = (data) => {
@@ -9,6 +9,14 @@ const FilterPrice = ({ setPriceMinMax }) => {
     const max = data.to.trim() === "" ? Infinity : +data.to;
 
     setPriceMinMax({ min, max });
+  };
+
+  const handleClearFilter = () => {
+    setPriceMinMax({ min: 0, max: Infinity });
+    reset({
+      from: "",
+      to: "",
+    });
   };
 
   return (
@@ -25,7 +33,16 @@ const FilterPrice = ({ setPriceMinMax }) => {
         </div>
         <button>Filter price</button>
       </form>
-      <p></p>
+      {priceMinMax.min !== 0 || priceMinMax.max !== Infinity ? (
+        <p>
+          From {priceMinMax.min} to {priceMinMax.max}
+          <span onClick={handleClearFilter}>
+            <b>X</b>
+          </span>{" "}
+        </p>
+      ) : (
+        ""
+      )}
     </article>
   );
 };

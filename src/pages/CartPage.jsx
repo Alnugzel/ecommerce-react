@@ -17,9 +17,9 @@ const CartPage = () => {
   };
 
   return (
-    <section>
-      <h2>Cart</h2>
-      <div>
+    <section className="cart">
+      <h2 className="cart__title">Cart</h2>
+      <div className="cart__content">
         {cart.map((prod) => (
           <CartElement key={prod.id} prod={prod} />
         ))}
