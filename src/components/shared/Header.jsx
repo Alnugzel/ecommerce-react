@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import CartElement from "../cart/CartElement";
 
 import "../styles/Header.css";
 
@@ -15,25 +14,25 @@ const Header = () => {
           </div>
 
           <button className="navbar__options" onClick={() => navigate("/user")}>
-            <i class="bx bx-user"></i>
+            <i className="bx bx-user"></i>
           </button>
 
           <button
             className="navbar__options"
             onClick={() => navigate("/register")}
           >
-            <i class="bx bx-list-plus"></i>
+            <i className="bx bx-list-plus"></i>
           </button>
 
           <button
             className="navbar__options"
             onClick={() => navigate("/purchases")}
           >
-            <i class="bx bx-purchase-tag"></i>
+            <i className="bx bx-purchase-tag"></i>
           </button>
 
           <button className="navbar__options" onClick={() => navigate("/cart")}>
-            <i class="bx bx-cart-alt"></i>
+            <i className="bx bx-cart-alt"></i>
           </button>
         </nav>
       </div>

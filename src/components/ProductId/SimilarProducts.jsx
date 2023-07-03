@@ -24,8 +24,8 @@ const SimilarProducts = ({ product }) => {
           {productsByCategory?.map((prod) => {
             if (product.id !== prod.id) {
               return (
-                <div className="similarProducts__product">
-                  <CardProduct key={prod.id} product={prod} />{" "}
+                <div key={prod.id} className="similarProducts__product">
+                  <CardProduct product={prod} />{" "}
                 </div>
               );
             }

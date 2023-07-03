@@ -4,17 +4,19 @@ import axios from "axios";
 const productsSlice = createSlice({
   name: "product",
   initialState: null,
-  reducers: { setProductsG: (state, acitons) => acitons.payload },
+  reducers: { setProductsG: (state, aciton) => aciton.payload },
 });
 
 const { setProductsG } = productsSlice.actions;
 
 export default productsSlice.reducer;
 
-export const getAllProductsThunk = () => (dispatch) => {
-  const url = "https://e-commerce-api-v2.academlo.tech/api/v1/products";
-  axios
-    .get(url)
-    .then((res) => dispatch(setProductsG(res.data)))
-    .catch((err) => console.log(err));
-};
+const defaultUrl = "https://e-commerce-api-v2.academlo.tech/api/v1/products";
+export const getAllProductsThunk =
+  (url = defaultUrl) =>
+  (dispatch) => {
+    axios
+      .get(url)
+      .then((res) => dispatch(setProductsG(res.data)))
+      .catch((err) => console.log(err));
+  };
