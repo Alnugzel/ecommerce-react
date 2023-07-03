@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import CartElement from "../components/cart/CartElement";
 import usePurchases from "../hooks/usePurchases";
+import "../components/styles/Cart.css";
 
 const CartPage = () => {
   const cart = useSelector((states) => states.cart);
@@ -26,10 +27,15 @@ const CartPage = () => {
       </div>
       <footer>
         <div>
-          <span>Total:</span> <span>{totalPrice}</span>
+          <span>
+            <b>Total:</b>
+          </span>{" "}
+          <span>{totalPrice}$</span>
         </div>
 
-        <button onClick={handlePurchase}>Purchase</button>
+        <button className="cart__btn" onClick={handlePurchase}>
+          Purchase
+        </button>
       </footer>
     </section>
   );

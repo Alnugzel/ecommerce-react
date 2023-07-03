@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { deleteCartThunk } from "../../store/slice/cart.slice";
+import "../styles/Cart.css";
 
 const CartElement = ({ prod }) => {
   const dispatch = useDispatch();
@@ -21,13 +22,14 @@ const CartElement = ({ prod }) => {
         <h3 className="cartElement__section-title">{prod.product.title}</h3>
         <p className="cartElement__section-qp">
           <span>{prod.quantity}</span> x <span>{prod.product.price}</span>
-          <button onClick={handleDelete}>
+          <button className="btn__delete-cart" onClick={handleDelete}>
             <i className="bx bx-trash"></i>
           </button>
         </p>
       </section>
       <footer className="cartElement__footer">
-        <span>Subtotal:</span> <span>{prod.quantity * prod.product.price}</span>
+        <span> Subtotal:</span>{" "}
+        <span>{prod.quantity * prod.product.price}$</span>
       </footer>
     </article>
   );
